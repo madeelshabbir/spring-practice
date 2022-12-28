@@ -13,4 +13,6 @@
     <property name="studentName" value="Adeel Shabbir" />
     <property name="studentAddress" value="Ghaziabad Lahore" />
   </bean>
+
+  <bean class="com.springcore.Student" name="student2" p:studentId="11" p:studentName="Hamza" p:studentAddress="Lahore" />
 </beans>
