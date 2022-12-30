@@ -26,4 +26,12 @@ public class A {
     this.x = x;
     this.ob = ob;
   }
+
+  public void init() {
+    System.out.println("init() executed");
+  }
+
+  public void destroy() {
+    System.out.println("destroy() executed");
+  }
 }

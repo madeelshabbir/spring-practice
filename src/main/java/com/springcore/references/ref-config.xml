@@ -21,7 +21,8 @@
     </property> -->
   </bean>
 
-  <bean class="com.springcore.references.A" name="aref1" p:x="33" p:ob-ref="bref" />
+  <bean class="com.springcore.references.A" name="aref1" p:x="33"
+        p:ob-ref="bref" init-method="init" destroy-method="destroy" />
 
   <bean class="com.springcore.references.B" name="brefc">
     <constructor-arg value="10" type="int" />

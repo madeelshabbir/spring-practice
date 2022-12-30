@@ -1,11 +1,11 @@
 package com.springcore.references;
 
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Test {
   public static void main(String[] args) {
-    ApplicationContext context = new ClassPathXmlApplicationContext("com/springcore/references/ref-config.xml");
+    AbstractApplicationContext context = new ClassPathXmlApplicationContext("com/springcore/references/ref-config.xml");
     A a = (A) context.getBean("aref");
     A a1 = (A) context.getBean("aref1");
     A ac = (A) context.getBean("arefc");
@@ -18,5 +18,6 @@ public class Test {
     System.out.println(ac.getOb().getY());
     System.out.println(ac1.getX());
     System.out.println(ac1.getOb().getY());
+    context.registerShutdownHook();
   }
 }
