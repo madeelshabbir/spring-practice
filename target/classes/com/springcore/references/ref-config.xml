@@ -4,6 +4,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:context="http://www.springframework.org/schema/context"
   xmlns:p="http://www.springframework.org/schema/p"
+  xmlns:c="http://www.springframework.org/schema/c"
   xsi:schemaLocation="http://www.springframework.org/schema/beans
   https://www.springframework.org/schema/beans/spring-beans.xsd
   http://www.springframework.org/schema/context
@@ -12,13 +13,24 @@
     <property name="y" value="90" />
   </bean>
 
-<bean class="com.springcore.references.A" name="aref">
-  <property name="x" value="80" />
-  <property name="ob" ref="bref" />
-  <!-- <property name="ob">
-    <ref bean="bref" />
-  </property> -->
-</bean>
+  <bean class="com.springcore.references.A" name="aref">
+    <property name="x" value="80" />
+    <property name="ob" ref="bref" />
+    <!-- <property name="ob">
+      <ref bean="bref" />
+    </property> -->
+  </bean>
 
-<bean class="com.springcore.references.A" name="aref1" p:x="33" p:ob-ref="bref" />
+  <bean class="com.springcore.references.A" name="aref1" p:x="33" p:ob-ref="bref" />
+
+  <bean class="com.springcore.references.B" name="brefc">
+    <constructor-arg value="10" type="int" />
+  </bean>
+
+  <bean class="com.springcore.references.A" name="arefc">
+    <constructor-arg value="11" type="int" index="0" />
+    <constructor-arg ref="brefc" />
+  </bean>
+
+  <bean class="com.springcore.references.A" name="arefc1" c:x="12" c:ob-ref="brefc" />
 </beans>
