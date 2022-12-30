@@ -1,5 +1,8 @@
 package com.springcore.references;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
@@ -41,5 +44,15 @@ public class A implements InitializingBean, DisposableBean {
   @Override
   public void afterPropertiesSet() throws Exception {
     System.out.println("afterPropertiesSet() executed");
+  }
+
+  @PostConstruct
+  public void start() {
+    System.out.println("start() executed");
+  }
+
+  @PreDestroy
+  public void end() {
+    System.out.println("end() executed");
   }
 }

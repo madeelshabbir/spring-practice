@@ -9,6 +9,9 @@
   https://www.springframework.org/schema/beans/spring-beans.xsd
   http://www.springframework.org/schema/context
   https://www.springframework.org/schema/context/spring-context.xsd">
+
+  <context:annotation-config />
+
   <bean class="com.springcore.references.B" name="bref">
     <property name="y" value="90" />
   </bean>
