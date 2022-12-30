@@ -42,9 +42,7 @@ public class Emp {
     this.courses = courses;
   }
 
-  Emp() {
-
-  }
+  Emp() {}
 
   Emp(String name, List<String> phones, Set<String> addresses, Map<String, String> courses) {
     this.name = name;
