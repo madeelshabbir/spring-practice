@@ -1,6 +1,9 @@
 package com.springcore.references;
 
-public class A {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class A implements InitializingBean, DisposableBean {
   private int x;
   private B ob;
 
@@ -33,5 +36,10 @@ public class A {
 
   public void destroy() {
     System.out.println("destroy() executed");
+  }
+
+  @Override
+  public void afterPropertiesSet() throws Exception {
+    System.out.println("afterPropertiesSet() executed");
   }
 }
